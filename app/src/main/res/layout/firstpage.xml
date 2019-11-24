@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#F5F0BB"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/imageButton"
+        android:layout_width="191dp"
+        android:layout_height="183dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/parents"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/imageButton2"
+        android:layout_width="191dp"
+        android:layout_height="183dp"
+        android:background="@drawable/children"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.47"
+        tools:ignore="ExtraText,MissingConstraints,SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="216dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@android:style/Widget.DeviceDefault.Light.TextView.SpinnerItem"
+        android:layout_width="249dp"
+        android:layout_height="90dp"
+        android:text="Sign up as:"
+        android:textSize="40dp"
+        android:textColor="#000000"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.209" />
+
+    <Button
+        android:id="@+id/textView2"
+        android:layout_width="198dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="440dp"
+        android:background="@drawable/custom_button"
+        android:text="Parent"
+        android:textColor="@android:color/black"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="9dp" />
+
+    <Button
+        android:id="@+id/textView3"
+        android:layout_width="174dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="440dp"
+        android:background="@drawable/custom_button"
+        android:text="Chaild"
+        android:textColor="@android:color/black"
+        android:textSize="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.061"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="233dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="214dp"
+        android:layout_height="72dp"
+        android:background="@drawable/custom_button"
+        android:text="Try now"
+        android:textSize="40dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="570dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

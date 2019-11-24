@@ -1,4 +1,4 @@
-package com.arhiser.todolist.data;
+package com.todolist.data;
 
 import androidx.room.Database;
 import androidx.room.RoomDatabase;

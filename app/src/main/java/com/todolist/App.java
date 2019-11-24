@@ -1,4 +1,4 @@
-package com.arhiser.todolist;
+package com.todolist;
 
 import android.app.Application;
 
@@ -11,7 +11,7 @@ public class App extends Application {
 
     private AppDatabase database;
     private NoteDao noteDao;
-
+0.
     private static App instance;
 
     public static App getInstance() {
