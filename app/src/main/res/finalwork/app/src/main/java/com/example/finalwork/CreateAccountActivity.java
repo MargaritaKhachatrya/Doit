@@ -41,6 +41,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         loginBtnTextView.setOnClickListener(v -> finish());
     }
 
+
     void createAccount() {
         String email = emailEditText.getText().toString();
         String password = passwordEditText.getText().toString();
@@ -59,20 +60,17 @@ public class CreateAccountActivity extends AppCompatActivity {
 
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(CreateAccountActivity.this,
-                new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        changeInProgress(false);
-                        if (task.isSuccessful()) {
-                            // creating account is done
-                            showToast("Successfully create account, Check email to verify");
-                            firebaseAuth.getCurrentUser().sendEmailVerification();
-                            firebaseAuth.signOut();
-                            finish();
-                        } else {
-                            // failure
-                            showToast(task.getException().getLocalizedMessage());
-                        }
+                task -> {
+                    changeInProgress(false);
+                    if (task.isSuccessful()) {
+                        // creating account is done
+                        showToast("Successfully create account, Check email to verify");
+                        firebaseAuth.getCurrentUser().sendEmailVerification();
+                        firebaseAuth.signOut();
+                        finish();
+                    } else {
+                        // failure
+                        showToast(task.getException().getLocalizedMessage());
                     }
                 });
     }

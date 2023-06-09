@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "336177215269",
+    "project_id": "finalwork-709c0",
+    "storage_bucket": "finalwork-709c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336177215269:android:060243a9fc6ec4aaf14ccc",
+        "android_client_info": {
+          "package_name": "com.example.finalwork"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336177215269-gdvcq1u65ifoqv19g92075gf1a01kj42.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.finalwork",
+            "certificate_hash": "c38affc56eba1bea3f21b52718d3d1b553cf8259"
+          }
+        },
+        {
+          "client_id": "336177215269-tptefbmvtnu4ce2f0r67100cvfblu4bo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdtTzQ4LKioVfWTriRTdThGbefoGbUlN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336177215269-tptefbmvtnu4ce2f0r67100cvfblu4bo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336177215269:android:3a4b5cd755188f91f14ccc",
+        "android_client_info": {
+          "package_name": "com.example.gafandfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336177215269-tptefbmvtnu4ce2f0r67100cvfblu4bo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdtTzQ4LKioVfWTriRTdThGbefoGbUlN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336177215269-tptefbmvtnu4ce2f0r67100cvfblu4bo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

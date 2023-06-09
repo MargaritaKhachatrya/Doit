@@ -1,30 +1,62 @@
 package com.example.finalwork.Model;
 
+import com.google.firebase.Timestamp;
+
 public class ToDoModel {
-    private int id, status;
-    private String task;
+    private String title, content;
+    private Timestamp timestamp;
+    private String date;
+    private String time;
 
-    public int getId() {
-        return id;
+    public ToDoModel(String title, String content, String timestamp) {
+        this.title = title;
+        this.content = content;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Timestamp getTimestamp() {
+        return timestamp;
     }
 
-    public int getStatus() {
-        return status;
+
+    public void setTimestamp() {
+        this.timestamp = timestamp;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public String getTitle() {
+        return title;
     }
 
-    public String getTask() {
-        return task;
+    public String getContent() {
+        return content;
     }
 
-    public void setTask(String task) {
-        this.task = task;
+
+    public void setTitle() {
+        this.title = title;
     }
+
+    public void setContent() {
+        this.content = content;
+    }
+
+
+
+    public byte[] getStatus() {
+        return new byte[0];
+    }
+
+    public void setId(int anInt) {
+    }
+
+    public void setStatus(int anInt) {
+    }
+    public String getDate() {
+        return date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+
 }

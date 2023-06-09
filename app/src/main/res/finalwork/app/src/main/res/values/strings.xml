@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">finalwork</string>
+    <string name="app_name">Do_It</string>
     <string name="add_task" />
+    <string name="Tasks">Задания</string>
+    <string name="create_account">Create Account</string>
+    <string name="Do_It">Do_It</string>
 </resources>

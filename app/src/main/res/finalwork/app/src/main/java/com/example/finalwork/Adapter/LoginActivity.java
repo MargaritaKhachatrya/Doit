@@ -1,5 +1,6 @@
 package com.example.finalwork.Adapter;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,13 +12,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.finalwork.CreateAccountActivity;
 import com.example.finalwork.MainActivity;
+import com.example.finalwork.Utility;
 import com.example.gafandfirebase.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.play.core.integrity.v;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -28,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     ProgressBar progressBar;
     TextView createAccountBtnTextView;
 
-    @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -39,71 +41,69 @@ public class LoginActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progress_bar);
         createAccountBtnTextView = findViewById(R.id.create_account_text_view_btn);
 
-        loginBtn.setOnClickListener((v) -> loginUser());
-        createAccountBtnTextView.setOnClickListener((v) -> startActivity(new Intent(LoginActivity.this, CreateAccountActivity.class)));
+        loginBtn.setOnClickListener((v)-> loginUser());
+        createAccountBtnTextView.setOnClickListener((v)-> startActivity(new Intent(LoginActivity.this, CreateAccountActivity.class)));
     }
 
-    void loginUser() {
+    void loginUser(){
         String email = emailEditText.getText().toString();
         String password = passwordEditText.getText().toString();
 
+
         boolean isValidated = validateData(email, password);
-        if (!isValidated) {
+        if(!isValidated){
             return;
         }
 
         loginAccountInFirebase(email, password);
     }
 
-    void loginAccountInFirebase(String email, String password) {
+    void loginAccountInFirebase(String email, String password){
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         changeInProgress(true);
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 changeInProgress(false);
-                if (task.isSuccessful()) {
+                if (task.isSuccessful()){
                     // login is success
-                    if (firebaseAuth.getCurrentUser().isEmailVerified()) {
-                        // go to MainActivity
+                    if (firebaseAuth.getCurrentUser().isEmailVerified()){
+                        //go to mainActivity
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
                         finish();
-                    } else {
-                        showToast("Email not verified, Please verify your email.");
+                    } else{
+                        Utility.showToast(LoginActivity.this, "Электронная почта не подтверждена, пожалуйста, подтвердите свою электронную почту.");
                     }
-                } else {
+                } else{
                     // login failed
-                    showToast(task.getException().getLocalizedMessage());
+                    Utility.showToast(LoginActivity.this, task.getException().getLocalizedMessage());
+
                 }
             }
         });
     }
 
-    void changeInProgress(boolean inProgress) {
-        if (inProgress) {
+    void changeInProgress(boolean inProgress){
+        if (inProgress){
             progressBar.setVisibility(View.VISIBLE);
             loginBtn.setVisibility(View.GONE);
-        } else {
+        }else{
             progressBar.setVisibility(View.GONE);
             loginBtn.setVisibility(View.VISIBLE);
         }
     }
 
-    boolean validateData(String email, String password) {
+    boolean validateData(String email, String password){
         // validate the data that are input by user
 
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
             emailEditText.setError("Email is invalid");
             return false;
         }
-        if (password.length() < 6) {
+        if (password.length() < 6){
             passwordEditText.setError("Password length is invalid");
             return false;
         }
         return true;
-    }
-
-    void showToast(String message) {
-        Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
     }
 }
